@@ -4,13 +4,14 @@ import './index.css';
 import App from './patterns/rednerPropsLiftingState';
 import reportWebVitals from './reportWebVitals';
 import RenderProps from './patterns/renderPropsPattern';
+import Input from './patterns/hookPattern';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const Title = (props) => props.render();
 RenderProps()
 root.render(
   <React.StrictMode>
-    <App/>
+    <Input/>
   </React.StrictMode>
 );
 
