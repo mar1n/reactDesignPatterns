@@ -1,3 +1,14 @@
-const Title = props => props.render();
+const Title = props => (
+    <>
+        {props.renderFirstComponent()}
+        {props.renderSecondComponent()}
+        {props.renderThirdComponent()}
+    </>
+)
 
-export default Title;
+function Component(props) {
+    const data = { name: "Szymon" };
+    return props.render(data);
+}
+
+export  {Title, Component};

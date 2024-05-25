@@ -1,23 +1,18 @@
 import React from "react";
-import Title from "../components/title";
+import{ Component, Title }from "../components/title";
 import ReactDOM from 'react-dom/client';
-
+const AS = (props) => {
+    console.log("props", props);
+    return(<h1>Second render prop!</h1>)
+};
 const RenderProps = () => ReactDOM.createRoot(document.getElementById('root')).render(
     <div className="App">
         <Title
-            render={
-                () => (
-                    <h1>
-                        <span role="img" aria-label="emoji">
-
-                        </span>
-                        I am a render prop!{" "}
-                        <span role="img" aria-label="emoji" ></span>
-
-                    </h1>
-                )
-            }
+            renderFirstComponent={() => <h1>First render prop!</h1>}
+            renderSecondComponent={() => <h1>Second render prop!</h1>}
+            renderThirdComponent={() => <h1>Third render prop!</h1>}
         />
+        <Component render={(data) => <AS  data={data} />} />
     </div>
 )
 
